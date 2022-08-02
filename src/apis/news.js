@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = process.env.REACT_APP_NEWS_KEY;
+const API_KEY = process.env.REACT_APP_TMDB_KEY;
 const baseUrl = 'https://newsapi.org/v2/top-headlines';
 const COUNTRY = 'id';
 const CATEGORY = 'health';
