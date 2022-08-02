@@ -17,6 +17,7 @@ const newsApi = axios.create({
   },
 });
 
+
 export const newsApiHealth = axios.create({
   baseURL: baseUrl,
   params: {

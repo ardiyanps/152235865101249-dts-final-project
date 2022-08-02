@@ -11,6 +11,11 @@ const NewsDetail = () => {
 
     const {state} = useLocation();
     const { article } = state; 
+
+    let urlImage = article.urlToImage;
+    if (urlImage === null) {
+      urlImage = 'https://cdn3d.iconscout.com/3d/premium/thumb/404-error-4461124-3696774.png'
+    }
     return (
         <ThemeProvider theme={theme}>
             <Navbar />
@@ -21,7 +26,7 @@ const NewsDetail = () => {
           component="img"
           height="500"
           width="300"
-          image={article.urlToImage}
+          image={urlImage}
           alt="News Poster"
         />
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>

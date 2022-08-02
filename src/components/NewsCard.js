@@ -8,6 +8,13 @@ const NewsCard = ({article}) => {
   const onDetail = () => {
     navigate('/detail',{state:{article}});
   }
+
+  const notFound = 'https://cdn3d.iconscout.com/3d/premium/thumb/404-error-4461124-3696774.png';
+  let urlImage = article.urlToImage;
+  if (urlImage === null) {
+    urlImage = notFound
+  }
+
   return (
         <Box>
         <Card sx={{ display: 'flex',
@@ -20,7 +27,7 @@ const NewsCard = ({article}) => {
         <CardMedia
           component="img"
           height="200"
-          image={article.urlToImage}
+          image={urlImage}
           alt="Movie Poster"
         />
         <Typography sx={{margin: 2, height: 150}}>

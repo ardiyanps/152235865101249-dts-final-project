@@ -11,7 +11,7 @@ import { auth } from '../config/firebase';
 
 const navItems = [
   { text: 'Home', link: '/home' },
-  { text: 'Sport', link: '/sport' },
+//   { text: 'Sport', link: '/sport' },
   { text: 'Health', link: '/health' },
   { text: 'Science', link: '/science' },
 ];

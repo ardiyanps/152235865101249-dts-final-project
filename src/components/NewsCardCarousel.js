@@ -1,13 +1,19 @@
 import { Box, CardMedia, Typography } from '@mui/material';
 import Card from '@mui/material/Card';
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 
 const NewsCardCarousel = ({article}) => {
   const navigate = useNavigate();
   const onDetail = () => {
     navigate('/detail',{state:{article}});
+  }
+
+  let urlImage = article.urlToImage;
+
+  if (urlImage === null) {
+    urlImage = 'https://cdn3d.iconscout.com/3d/premium/thumb/404-error-4461124-3696774.png'
   }
   return (
         <Box sx={{marginTop: 5}}>
@@ -17,7 +23,7 @@ const NewsCardCarousel = ({article}) => {
           component="img"
           height="350"
           width="350"
-          image={article.urlToImage}
+          image={urlImage}
           alt="News Poster"
         />
         <Typography sx={{margin: 5}}>
