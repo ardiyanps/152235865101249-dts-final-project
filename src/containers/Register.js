@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import image from '../img/login.png';
 
 import { auth } from '../config/firebase';
 
@@ -30,6 +31,7 @@ const Register = () => {
     };
 
     return (
+        <Box sx={{width: '100%', height: '72vh' , backgroundImage: `url(${image})`, backgroundSize: '100%', backgroundRepeat: 'no-repeat' }}>
         <Box sx={{width: '50%' ,display: 'flex', justifyContent: 'right', marginTop: 30}}>
         <Container component="main" maxWidth="xs">
             <Box
@@ -50,6 +52,7 @@ const Register = () => {
                                 label="Email Address"
                                 name="email"
                                 autoComplete="email"
+                                variant="standard"
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -61,6 +64,7 @@ const Register = () => {
                                 type="password"
                                 id="password"
                                 autoComplete="new-password"
+                                variant="standard"
                             />
                         </Grid>
                     </Grid>
@@ -69,7 +73,7 @@ const Register = () => {
                         type="submit"
                         fullWidth
                         variant="contained"
-                        sx={{ mt: 3, mb: 2 }}
+                        sx={{ mt: 3, mb: 2 , bgcolor: 'slategray'}}
                     >
                         Sign Up
                     </Button>
@@ -83,6 +87,7 @@ const Register = () => {
                 </Box>
             </Box>
         </Container>
+        </Box>
         </Box>
     );
 }

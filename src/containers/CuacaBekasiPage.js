@@ -1,9 +1,9 @@
-import Carousel from 'react-elastic-carousel';
 import { useEffect, useState } from 'react';
-import cuacaBekasi from '../apis/cuaca';
+import { Box } from '@mui/material';
+import {cuacaBekasi} from '../apis/cuaca';
 import CuacaCard from '../components/CuacaCard';
 
-const CuacaListBekasi = () => {
+const CuacaBekasiPage = () => {
     const [dataCuaca, setCuaca] = useState([]);
 
     useEffect(() => {
@@ -24,15 +24,21 @@ const CuacaListBekasi = () => {
         return x;
     })
 
+    console.log(dataCuaca);
+
     return (
-            <Carousel itemsToShow={6}>
+            <Box sx={{ display: 'flex',
+            flexDirection: 'row',
+            width: '100%',
+            flexWrap: 'wrap',
+            mt: 5}}>
             {
                     array.map(cuaca => (
                         <CuacaCard key={cuaca.unique} cuaca={cuaca}></CuacaCard>
                     ))
                 }
-            </Carousel>
+            </Box>
     );
 }
 
-export default CuacaListBekasi;
+export default CuacaBekasiPage;

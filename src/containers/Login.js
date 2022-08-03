@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import * as React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import image from '../img/login.png';
 
 import { auth } from '../config/firebase';
 
@@ -29,7 +30,8 @@ const Login = () => {
     };
 
     return (
-        <Box sx={{width: '50%' ,display: 'flex', justifyContent: 'right', marginTop: 30}}>
+        <Box sx={{width: '100%', height: '72vh' , backgroundImage: `url(${image})`, backgroundSize: '100%', backgroundRepeat: 'no-repeat' }}>
+        <Box sx={{width: '50%' ,display: 'flex', justifyContent: 'right', marginTop: 30 }}>
         <Container component="main" maxWidth="xs">
             <Box
                 sx={{
@@ -49,6 +51,7 @@ const Login = () => {
                         name="email"
                         autoComplete="email"
                         autoFocus
+                        variant="standard"
                     />
                     <TextField
                         margin="normal"
@@ -59,13 +62,14 @@ const Login = () => {
                         type="password"
                         id="password"
                         autoComplete="current-password"
+                        variant="standard"
                     />
                     <Typography color='red'>{errorMessage}</Typography>
                     <Button
                         type="submit"
                         fullWidth
                         variant="contained"
-                        sx={{ mt: 3, mb: 2 }}
+                        sx={{ mt: 3, mb: 2 , bgcolor: 'slategray'}}
                     >
                         Sign In
                     </Button>
@@ -79,6 +83,7 @@ const Login = () => {
                 </Box>
             </Box>
         </Container>
+        </Box>
         </Box>
     );
 }

@@ -11,9 +11,13 @@ import { auth } from '../config/firebase';
 
 const navItems = [
   { text: 'Home', link: '/home' },
-  { text: 'Sport', link: '/sport' },
-  { text: 'Health', link: '/health' },
-  { text: 'Science', link: '/science' },
+  { text: 'Bekasi', link: '/bekasi' },
+  { text: 'Jakarta Timur', link: '/jaktim' },
+  { text: 'Jakarta Barat', link: '/jakbar' },
+  { text: 'Jakarta Selatan', link: '/jaksel' },
+  { text: 'Jakarta Utara', link: '/jakut' },
+  { text: 'Jakarta Pusat', link: '/jakpus' },
+  { text: 'Jakarta Kepulauan Seribu', link: '/jakkep' },
 ];
 
 
@@ -41,7 +45,7 @@ const Navbar = () => {
                         }}
                     >
                         <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/">
-                            Apa kabar Indonesia-ku
+                            Cerah Indonesia-ku!
                         </Link>
                     </Typography>
                     <Typography

@@ -1,15 +1,15 @@
 import Carousel from 'react-elastic-carousel';
 import { useEffect, useState } from 'react';
-import cuacaBekasi from '../apis/cuaca';
+import { cuacaJaksel } from '../apis/cuaca';
 import CuacaCard from '../components/CuacaCard';
 
-const CuacaListBekasi = () => {
+const CuacaListJaksel = () => {
     const [dataCuaca, setCuaca] = useState([]);
 
     useEffect(() => {
         const fetchCuaca = async () => {
             try {
-                const fetchedCuaca = await cuacaBekasi.get();
+                const fetchedCuaca = await cuacaJaksel.get();
                 setCuaca(fetchedCuaca.data);
             } catch (error) {
                 console.log(error);
@@ -35,4 +35,4 @@ const CuacaListBekasi = () => {
     );
 }
 
-export default CuacaListBekasi;
+export default CuacaListJaksel;

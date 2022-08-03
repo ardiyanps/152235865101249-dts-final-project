@@ -1,15 +1,15 @@
-import Carousel from 'react-elastic-carousel';
 import { useEffect, useState } from 'react';
-import cuacaBekasi from '../apis/cuaca';
+import { Box } from '@mui/material';
+import cuacaJakkep from '../apis/cuaca';
 import CuacaCard from '../components/CuacaCard';
 
-const CuacaListBekasi = () => {
+const CuacaJakkepPage = () => {
     const [dataCuaca, setCuaca] = useState([]);
 
     useEffect(() => {
         const fetchCuaca = async () => {
             try {
-                const fetchedCuaca = await cuacaBekasi.get();
+                const fetchedCuaca = await cuacaJakkep.get();
                 setCuaca(fetchedCuaca.data);
             } catch (error) {
                 console.log(error);
@@ -19,20 +19,26 @@ const CuacaListBekasi = () => {
         fetchCuaca();
     }, []);
 
+    console.log(dataCuaca);
+
     const array = dataCuaca.map((x) => {
         x.unique = Math.random()
         return x;
     })
 
     return (
-            <Carousel itemsToShow={6}>
+            <Box sx={{ display: 'flex',
+            flexDirection: 'row',
+            width: '100%',
+            flexWrap: 'wrap',
+            mt: 5}}>
             {
                     array.map(cuaca => (
                         <CuacaCard key={cuaca.unique} cuaca={cuaca}></CuacaCard>
                     ))
                 }
-            </Carousel>
+            </Box>
     );
 }
 
-export default CuacaListBekasi;
+export default CuacaJakkepPage;

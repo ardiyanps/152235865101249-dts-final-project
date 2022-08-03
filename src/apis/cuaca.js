@@ -8,7 +8,11 @@ const ulrJakkep = 'https://ibnux.github.io/BMKG-importer/cuaca/501194.json';
 const ulrJakpus = 'https://ibnux.github.io/BMKG-importer/cuaca/501195.json';
 const ulrJakut = 'https://ibnux.github.io/BMKG-importer/cuaca/501196.json';
 
-const cuacaBekasi = axios.create({
+const cuaca = axios.create({
+    baseURL: urlBekasi,
+  });
+
+export const cuacaBekasi = axios.create({
   baseURL: urlBekasi,
 });
 
@@ -36,4 +40,4 @@ export const cuacaJakut = axios.create({
     baseURL: ulrJakut,
   });
 
-export default cuacaBekasi;
+export default cuaca;

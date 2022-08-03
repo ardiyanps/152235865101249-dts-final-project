@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const CuacaCard = ({cuaca}) => {
+const CuacaCardListJaktim = ({cuaca}) => {
   const navigate = useNavigate();
   const onDetail = () => {
     navigate('/detail',{state:{cuaca}});
@@ -29,4 +29,4 @@ const CuacaCard = ({cuaca}) => {
   );
 }
 
-export default CuacaCard;
+export default CuacaCardListJaktim;

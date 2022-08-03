@@ -1,9 +1,9 @@
-import { Box } from '@mui/material';
 import { useEffect, useState } from 'react';
-import cuacaJaktim from '../apis/cuaca';
+import { Box } from '@mui/material';
+import { cuacaJaktim } from '../apis/cuaca';
 import CuacaCard from '../components/CuacaCard';
 
-const CuacaList = () => {
+const CuacaJaktimPage = () => {
     const [dataCuaca, setCuaca] = useState([]);
 
     useEffect(() => {
@@ -20,15 +20,25 @@ const CuacaList = () => {
     }, []);
 
     console.log(dataCuaca);
+
+    const array = dataCuaca.map((x) => {
+        x.unique = Math.random()
+        return x;
+    })
+
     return (
-            <Box>
+            <Box sx={{ display: 'flex',
+            flexDirection: 'row',
+            width: '100%',
+            flexWrap: 'wrap',
+            mt: 5}}>
             {
-                    dataCuaca.map(cuaca => (
-                        <CuacaCard key={cuaca.kodeCuaca} cuaca={cuaca}></CuacaCard>
+                    array.map(cuaca => (
+                        <CuacaCard key={cuaca.unique} cuaca={cuaca}></CuacaCard>
                     ))
                 }
             </Box>
     );
 }
 
-export default CuacaList;
+export default CuacaJaktimPage;

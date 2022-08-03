@@ -9,14 +9,18 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import App from './App';
 import ProtectedRoute from './components/ProtectedRoute';
-import Health from './containers/Health';
+import Bekasi from './containers/Bekasi';
+import CuacaDetail from './containers/CuacaDetail';
 import Home from './containers/Home';
+import Jakbar from './containers/Jakbar';
+import Jakkep from './containers/Jakkep';
+import Jakpus from './containers/Jakpus';
+import Jaksel from './containers/Jaksel';
+import Jakut from './containers/Jakut';
+import Jaktim from './containers/Jaktim';
 import Login from './containers/Login';
-import NewsDetail from './containers/NewsDetail';
 import NoMatch from './containers/NoMatch';
 import Register from './containers/Register';
-import Science from './containers/Science';
-import Sport from './containers/Sport';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -38,24 +42,41 @@ root.render(
           </ProtectedRoute>} />
         <Route path="detail" element={
           <ProtectedRoute>
-            <NewsDetail />
+            <CuacaDetail />
           </ProtectedRoute>} />
           <Route path="home" element={
           <ProtectedRoute>
             <Home />
           </ProtectedRoute>} />
-          <Route path="sport" element={
+          <Route path="bekasi" element={
           <ProtectedRoute>
-            <Sport />
+            <Bekasi />
           </ProtectedRoute>} />
-          <Route path="health" element={
+          <Route path="jaktim" element={
           <ProtectedRoute>
-            <Health />
+            <Jaktim />
           </ProtectedRoute>} />
-          <Route path="science" element={
+          <Route path="jakbar" element={
           <ProtectedRoute>
-            <Science />
+            <Jakbar />
           </ProtectedRoute>} />
+          <Route path="jaksel" element={
+          <ProtectedRoute>
+            <Jaksel />
+          </ProtectedRoute>} />
+          <Route path="jakut" element={
+          <ProtectedRoute>
+            <Jakut />
+          </ProtectedRoute>} />
+          <Route path="jakpus" element={
+          <ProtectedRoute>
+            <Jakpus />
+          </ProtectedRoute>} />
+          <Route path="jakkep" element={
+          <ProtectedRoute>
+            <Jakkep />
+          </ProtectedRoute>} />
+
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </BrowserRouter>

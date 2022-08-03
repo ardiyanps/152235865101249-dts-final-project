@@ -19,11 +19,16 @@ const CuacaListJaktim = () => {
         fetchCuaca();
     }, []);
 
+    const array = dataCuaca.map((x) => {
+        x.unique = Math.random()
+        return x;
+    })
+
     return (
             <Carousel itemsToShow={6}>
             {
-                    dataCuaca.map(cuaca => (
-                        <CuacaCard key={cuaca.kodeCuaca} cuaca={cuaca}></CuacaCard>
+                    array.map(cuaca => (
+                        <CuacaCard key={cuaca.unique} cuaca={cuaca}></CuacaCard>
                     ))
                 }
             </Carousel>
