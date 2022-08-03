@@ -9,11 +9,11 @@ const NewsCard = ({article}) => {
     navigate('/detail',{state:{article}});
   }
 
-  const notFound = 'https://cdn3d.iconscout.com/3d/premium/thumb/404-error-4461124-3696774.png';
-  let urlImage = article.urlToImage;
-  if (urlImage === null) {
-    urlImage = notFound
-  }
+  // const notFound = 'https://cdn3d.iconscout.com/3d/premium/thumb/404-error-4461124-3696774.png';
+  // let urlImage = article.urlToImage;
+  // if (urlImage === null) {
+  //   urlImage = notFound
+  // }
 
   return (
         <Box>
@@ -27,8 +27,8 @@ const NewsCard = ({article}) => {
         <CardMedia
           component="img"
           height="200"
-          image={urlImage}
-          alt="Movie Poster"
+          // image={urlImage}
+          alt="News Poster"
         />
         <Typography sx={{margin: 2, height: 150}}>
           <h4>{article.title}</h4>

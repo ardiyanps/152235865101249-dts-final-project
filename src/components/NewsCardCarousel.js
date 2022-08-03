@@ -10,11 +10,10 @@ const NewsCardCarousel = ({article}) => {
     navigate('/detail',{state:{article}});
   }
 
-  let urlImage = article.urlToImage;
-
-  if (urlImage === null) {
-    urlImage = 'https://cdn3d.iconscout.com/3d/premium/thumb/404-error-4461124-3696774.png'
-  }
+//   let urlImage = article.urlToImage;
+//   if (urlImage === null) {
+//     urlImage = 'https://cdn3d.iconscout.com/3d/premium/thumb/404-error-4461124-3696774.png'
+//   }
   return (
         <Box sx={{marginTop: 5}}>
         <Card sx={{display: "flex", width: '100%', height: 400, marginTop: 5, backgroundColor: '#fff9b2', borderRadius: 10 }} onClick={() => onDetail()}>
@@ -23,7 +22,7 @@ const NewsCardCarousel = ({article}) => {
           component="img"
           height="350"
           width="350"
-          image={urlImage}
+        //   image={urlImage}
           alt="News Poster"
         />
         <Typography sx={{margin: 5}}>
